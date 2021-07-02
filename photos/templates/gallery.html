@@ -1,81 +1,66 @@
-{% load bootstrap3 %}
-{% load static%}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if title %}
-    <title>Gallery - {{title}}</title>
-    {% else %}
-      <title> My Gallery </title>
-    {% endif %}
-
-    {% block styles %}
-    {% bootstrap_css %}
-  {% endblock %}
-
-</head>
-{% include "navbar.html" %}
+{%extends 'base.html'%}
 {% block content %}
-<h2>This is my Gallery</h2>
-{%endblock%}
-<body class="m-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header">
-                        Category
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">All</li>
-                        <li class="list-group-item">Nature</li>
-                        <li class="list-group-item">Friends</li>
-                        <li class="list-group-item">Food</li>
-                    </ul>
+{{block.super}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Category
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">All</li>
+                    <li class="list-group-item">Nature</li>
+                    <li class="list-group-item">Friends</li>
+                    <li class="list-group-item">Food</li>
+                   
+                        <a href="{% url 'add'%}" class="btn btn-dark" >Add Photo</a>
+                    
+
+                </ul>
             </div>
-            <div class="col-md-9">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbail" src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d" width="200px" alt="Card image cap">
-                            <div class="card-body">
-                                <small>Category:Pets</small>
-                            </div>
-                            <a href="{%url 'add' %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbail" src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d"  width="200px" alt="Card image cap">
-                            <div class="card-body">
-                                <small>Category:Pets</small>
-                            </div>
-                            <a href="{%url 'add' %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card my-2">
-                            <img class="image-thumbail" src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d"  width="200px" alt="Card image cap">
-                            <div class="card-body">
-                                <small>Category:Pets</small>
-                            </div>
-                            <a href="{%url 'add' %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</body>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card my-2">
+                        <img class="image-thumbail"
+                            src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d"
+                            width="200px" alt="Card image cap">
+                        <div class="card-body">
+                            <small>Category:Pets</small>
+                        </div>
+                        <a href="{%url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
 
-</html>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card my-2">
+                        <img class="image-thumbail"
+                            src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d"
+                            width="200px" alt="Card image cap">
+                        <div class="card-body">
+                            <small>Category:Pets</small>
+                        </div>
+                        <a href="{%url 'photo'  5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card my-2">
+                        <img class="image-thumbail"
+                            src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d"
+                            width="200px" alt="Card image cap">
+                        <div class="card-body">
+                            <small>Category:Pets</small>
+                        </div>
+                        <a href="{%url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
