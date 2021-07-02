@@ -10,10 +10,9 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">All</li>
-                    <li class="list-group-item">Nature</li>
-                    <li class="list-group-item">Friends</li>
-                    <li class="list-group-item">Food</li>
-                   
+                    {% for category in categories %}
+                    <li class="list-group-item">{{category.category_name}}</li>
+                    {%endfor%}
                         <a href="{% url 'add'%}" class="btn btn-dark" >Add Photo</a>
                     
 
@@ -22,30 +21,6 @@
         </div>
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card my-2">
-                        <img class="image-thumbail"
-                            src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d"
-                            width="200px" alt="Card image cap">
-                        <div class="card-body">
-                            <small>Category:Pets</small>
-                        </div>
-                        <a href="{%url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card my-2">
-                        <img class="image-thumbail"
-                            src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d"
-                            width="200px" alt="Card image cap">
-                        <div class="card-body">
-                            <small>Category:Pets</small>
-                        </div>
-                        <a href="{%url 'photo'  5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-
-                    </div>
-                </div>
                 <div class="col-md-4">
                     <div class="card my-2">
                         <img class="image-thumbail"
