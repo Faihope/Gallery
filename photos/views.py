@@ -11,10 +11,12 @@ def gallery(request):
 
 def viewPhoto(request,pk=int):
     photo=Image.objects.get(id=pk)
-    # location=Image.objects.all()
     return render(request,'photo.html',{'photo':photo})
 
 def addPhoto(request):
-    return render(request,'add.html')
+    categories= Category.objects.all()
+
+    context= {'categories':categories}
+    return render(request,'add.html',context)
     
 
