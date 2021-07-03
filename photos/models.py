@@ -10,6 +10,11 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
 
+    @classmethod
+    def search_by_title(cls,search_term):
+        category = cls.objects.filter(title__icontains=search_term)
+        return category
+
 class Location(models.Model):
     location_name=models.CharField(max_length=50,blank=False ,null=True)
     

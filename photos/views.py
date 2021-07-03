@@ -2,10 +2,15 @@ from django.shortcuts import render,redirect
 from .models import Category,Image,Location
 
 
+
 # Create your views here.
 def gallery(request):
+    category=request.GET.get('category_name')
+    if category==None:
+        photos=Image.objects.all()
+    else:
+        photos=Image.objects.filter(category_name__icontains=category)
     categories= Category.objects.all()
-    photos=Image.objects.all()
     context= {'categories':categories, 'photos':photos}
     
     return render(request,'gallery.html',context)
@@ -38,5 +43,19 @@ def addPhoto(request):
 
     context= {'categories':categories}
     return render(request,'add.html',context)
+
+def search_results(request):
+
+    if 'category_name' in request.GET and request.GET["category_name"]:
+        search_term = request.GET.get("category_name")
+        searched_category_name = Category.search_by_category_name(search_term)
+        message = f"{search_term}"
+
+        return render(request, 'search.html',{"message":message,"category_name": searched_category_name})
+
+    else:
+        message = "You haven't searched for any term"
+        return render(request, 'search.html',{"message":message})
+
     
 
