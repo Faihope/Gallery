@@ -6,10 +6,12 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-header">
-                    Category
+                    Categories
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">All</li>
+                    <li class="list-group-item">
+                       <a href="{% url 'gallery' %}">All</a> 
+                    </li>
                     {% for category in categories %}
                     <li class="list-group-item">{{category.category_name}}</li>
                     {%endfor%}
