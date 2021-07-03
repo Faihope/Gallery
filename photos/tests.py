@@ -20,3 +20,11 @@ class ImageTestClass(TestCase):
         images_record=Image.objects.all()
         self.image1.delete_image()
         self.assertTrue(len(images_record)==0)
+
+    def test_update_image(self):
+        image=Image.objects.first()
+        new_image='image'
+        expected_image=f'{new_image}'
+        self.assertEqual(expected_image,'image')
+
+

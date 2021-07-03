@@ -39,6 +39,10 @@ class Image(models.Model):
 
     def delete_image(self):
         self.delete()
+    @classmethod
+    def update_image(self):
+        image=Image.objects.get_or_create()
+        return image
 
 
 
