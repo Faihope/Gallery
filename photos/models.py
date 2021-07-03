@@ -11,8 +11,8 @@ class Category(models.Model):
         return self.category_name
 
     @classmethod
-    def search_by_title(cls,search_term):
-        category = cls.objects.filter(title__icontains=search_term)
+    def search_by_category_name(cls,search_term):
+        category = cls.objects.filter(category_name__icontains=search_term)
         return category
 
 class Location(models.Model):

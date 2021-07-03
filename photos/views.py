@@ -48,6 +48,7 @@ def search_results(request):
 
     if 'category_name' in request.GET and request.GET["category_name"]:
         search_term = request.GET.get("category_name")
+    
         searched_category_name = Category.search_by_category_name(search_term)
         message = f"{search_term}"
 
