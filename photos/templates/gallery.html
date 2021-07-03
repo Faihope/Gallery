@@ -21,18 +21,22 @@
         </div>
         <div class="col-md-9">
             <div class="row">
+                {% for photo in photos %}
                 <div class="col-md-4">
                     <div class="card my-2">
                         <img class="image-thumbail"
-                            src="https://i.guim.co.uk/img/media/7a633730f5f90db3c12f6efc954a2d5b475c3d4a/0_138_5544_3327/master/5544.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=27c09d27ccbd139fd0f7d1cef8f7d41d"
+                            src="{{ photo.image.url}}"
                             width="200px" alt="Card image cap">
                         <div class="card-body">
-                            <small>Category:Pets</small>
+                            <small>Category:{{photo.category.category_name}}</small>
                         </div>
-                        <a href="{%url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
+                        <a href="{%url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
 
                     </div>
                 </div>
+                {% empty %}
+                <h2>No photos ....</h2>
+                {% endfor %}
             </div>
         </div>
 
