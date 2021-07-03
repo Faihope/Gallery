@@ -34,6 +34,9 @@ class Image(models.Model):
     def __str__(self):
         return self.description
 
+    def save_image(self):
+        self.save()
+
 
 
 
