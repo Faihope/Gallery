@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Category,Image
+from .models import Category,Image,Location
 
 # Create your views here.
 def gallery(request):
@@ -11,8 +11,10 @@ def gallery(request):
 
 def viewPhoto(request,pk=int):
     photo=Image.objects.get(id=pk)
+    # location=Image.objects.all()
     return render(request,'photo.html',{'photo':photo})
 
 def addPhoto(request):
     return render(request,'add.html')
+    
 

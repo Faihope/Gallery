@@ -19,6 +19,15 @@
                 </ul>
             </div>
         </div>
+
+        <style>
+            .image-thumbail{
+               height: 200px; 
+               width: 200px;
+               overflow: auto;
+            }
+        </style>
+
         <div class="col-md-9">
             <div class="row">
                 {% for photo in photos %}
@@ -26,7 +35,7 @@
                     <div class="card my-2">
                         <img class="image-thumbail"
                             src="{{ photo.image.url}}"
-                            width="200px" alt="Card image cap">
+                            width="100px" alt="Card image cap">
                         <div class="card-body">
                             <small>Category:{{photo.category.category_name}}</small>
                         </div>
