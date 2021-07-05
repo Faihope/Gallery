@@ -23,8 +23,21 @@ class ImageTestClass(TestCase):
 
     def test_update_image(self):
         image=Image.objects.first()
-        new_image='image'
+        new_image=Image.update_image()
         expected_image=f'{new_image}'
-        self.assertEqual(expected_image,'image')
+        self.assertTrue(expected_image,'new_image')
+
+    def test_search_category(self):
+        category=Image.objects.all()
+        search_term='food'
+        db_term=search_term
+        if db_term !=search_term:
+            return('no match')
+
+        else:
+            return(search_term)
+
+
+
 
 
