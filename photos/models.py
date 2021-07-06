@@ -13,6 +13,9 @@ class Category(models.Model):
     def save_categories(self):
         self.save()
 
+    def delete_category(self):
+        self.delete()
+
     @classmethod
     def search_by_category_name(cls,search_term):
         category = cls.objects.filter(category_name__icontains=search_term)

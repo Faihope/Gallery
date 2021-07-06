@@ -48,3 +48,8 @@ class CategoryTestClass(TestCase):
         self.nature.save_categories()
         category=Category.objects.all()
         self.assertTrue(len(category)>0)
+    def test_delete_categories(self):
+        self.nature.save_categories()
+        category_record=Category.objects.all()
+        self.nature.delete_category()
+        self.assertTrue(len(category_record)==0)
