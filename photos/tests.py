@@ -36,3 +36,10 @@ class ImageTestClass(TestCase):
 
         else:
             return(search_term)  
+class CategoryTestClass(TestCase):
+    #setup method
+    def setUp(self):
+        self.nature=Category(category_name="nature")
+    #Testing Instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.nature,Category))
