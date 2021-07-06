@@ -66,3 +66,9 @@ class LocationTestClass(TestCase):
         self.nairobi.save_location()
         location=Location.objects.all()
         self.assertTrue(len(location)>0)
+
+    def test_delete_location(self):
+        self.nairobi.save_location()
+        location_record=Location.objects.all()
+        self.nairobi.delete_location()
+        self.assertTrue(len(location_record)==0)
