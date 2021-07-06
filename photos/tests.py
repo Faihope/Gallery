@@ -61,3 +61,8 @@ class LocationTestClass(TestCase):
     #Testing Instance
     def test_instance(self):
         self.assertTrue(isinstance(self.nairobi,Location))
+
+    def test_save_location(self):
+        self.nairobi.save_location()
+        location=Location.objects.all()
+        self.assertTrue(len(location)>0)
