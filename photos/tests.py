@@ -43,3 +43,8 @@ class CategoryTestClass(TestCase):
     #Testing Instance
     def test_instance(self):
         self.assertTrue(isinstance(self.nature,Category))
+
+    def test_save_categories(self):
+        self.nature.save_categories()
+        category=Category.objects.all()
+        self.assertTrue(len(category)>0)

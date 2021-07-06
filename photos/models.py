@@ -10,6 +10,9 @@ class Category(models.Model):
     def __str__(self):
         return self.category_name
 
+    def save_categories(self):
+        self.save()
+
     @classmethod
     def search_by_category_name(cls,search_term):
         category = cls.objects.filter(category_name__icontains=search_term)
