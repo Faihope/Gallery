@@ -15,6 +15,10 @@ class Category(models.Model):
         category = cls.objects.filter(category_name__icontains=search_term)
         return category
 
+    def display_searched():
+        category=Image.objects.all()
+        return category
+
 class Location(models.Model):
     location_name=models.CharField(max_length=50,blank=False ,null=True)
     
