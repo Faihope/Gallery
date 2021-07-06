@@ -34,6 +34,7 @@ class Location(models.Model):
 
 
 
+
 class Image(models.Model):
     image=models.ImageField(null=True,blank=False)
     name=models.CharField(max_length=100)

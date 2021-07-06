@@ -53,3 +53,11 @@ class CategoryTestClass(TestCase):
         category_record=Category.objects.all()
         self.nature.delete_category()
         self.assertTrue(len(category_record)==0)
+
+class LocationTestClass(TestCase):
+    #setup method
+    def setUp(self):
+        self.nairobi=Location(location_name="Eldoret")
+    #Testing Instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.nairobi,Location))
