@@ -35,9 +35,4 @@ class ImageTestClass(TestCase):
             return('no match')
 
         else:
-            return(search_term)
-
-
-
-
-
+            return(search_term)  
